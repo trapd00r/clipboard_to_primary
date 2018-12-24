@@ -1,0 +1,73 @@
+#!/usr/bin/perl
+# vim: ft=perl:fdm=marker:fmr=#<,#>:fen:et:sw=2:
+use strict;
+use warnings FATAL => 'all';
+use vars     qw($VERSION);
+use autodie  qw(:all);
+
+$VERSION='0.001';
+
+while(1) {
+  system('xclip -selection -primary -o | xclip -selection clipboard -i');
+  sleep 2;
+}
+
+
+=pod
+
+=head1 NAME
+
+clipboard_to_primary - sync XA_CLIPBOARD to XA_SELECTION X11 buffers
+
+=head1 SYNOPSIS
+
+  clipboard_to_primary [OPTIONS]
+
+=head1 DESCRIPTION
+
+I rarely use any gui application, the exception being firefox with
+tridactyl. For some reason you can't paste from the PRIMARY buffer in
+firefox/tridactyl without using the mouse (and at times that doesn't
+work either). This solves this issue by syncing the CLIPBOARD buffer
+with the content of the PRIMARY selection so you can use Shift+Insert to
+paste in gui applications as well.
+
+The clipboard buffer to use is **hardcoded** in the gtk source:
+L</https://unix.stackexchange.com/questions/178070/why-does-shiftinsert-paste-from-clipboard-in-some-applications-and-primary-in-o>
+
+=head1 OPTIONS
+
+None!
+
+=head1 AUTHOR
+
+    \ \ | / /
+     \ \ - /
+      \ | /
+      (O O)
+      ( < )
+      (-=-)
+
+  Magnus Woldrich
+  CPAN ID: WOLDRICH
+  m@japh.se
+  http://japh.se
+
+
+=head1 REPORTING BUGS
+
+Report bugs to L<m@japh.se> or L<use the issue tracker|http://github.com/trapd00r/clipboard_to_primary/issues>.
+
+clipboard_to_primary home page: L<http://github.com/trapd00r/clipboard_to_primary/>
+
+=head1 COPYRIGHT
+
+Copyright 2018- the B<clipboard_to_primary>s L</AUTHOR> and L</CONTRIBUTORS> as listed
+above.
+
+=head1 LICENSE
+
+This program is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself.
+
+=cut
