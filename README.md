@@ -20,7 +20,7 @@ The clipboard buffer to use is \*\*hardcoded\*\* in the gtk source:
 
 # OPTIONS
 
-None!
+    -n,  --no-daemon  do not detach from the terminal
 
 # AUTHOR
 
